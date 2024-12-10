@@ -1,0 +1,41 @@
+//PROGRAM DIAGRAM UML PRAKTIKUM SESI 6
+
+@startuml = startuml
+skinparam ClassAttributeIconSize 0
+
+class Products {
+    - name: String
+    - stok: int
+    - hargaPerItem: int
+    - totalHarga: int
+    --
+    + setDetails(name: String, stok: int, hargaPerItem: int): void
+    + getDetails(): String
+    + calculateTotalHarga(): void
+    + getTotalHarga(): int
+}
+
+class Customer {
+    - customerId: int
+    - nameCustomer: String
+    - email: String
+    - purchasedProducts: List<Products>
+    --
+    + Customer(customerId: int, nameCustomer: String, email: String)
+    + getCustomerDetails(): String
+    + addProduct(product: Products): void
+    + getPurchasedProducts(): List<Products>
+    + getTotalHargaKeseluruhan(): int
+}
+
+class Main {
+    --
+    + main(args: String[]): void
+}
+
+Products <-- Customer : purchases
+Main ..>  Products: uses
+Main ..> Customer: uses
+@enduml
+
+@enduml

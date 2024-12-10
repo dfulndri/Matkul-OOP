@@ -1,0 +1,60 @@
+@startuml = Desain_UML_Kelas & Mahasiswa yang sudah di modifikasi
+skinparam ClassAttributeIconSize 0
+
+package com.pbo {
+
+    class Main {
+        + main(args: String[]): void
+    }
+
+    class Jurusan {
+        - nama: String
+        - kode: String
+        --
+        + Jurusan(nama: String, kode: String)
+        + getNama(): String
+        + setNama(nama: String): void
+        + getKode(): String
+        + setKode(kode: String): void
+        + displayInfo(): void
+    }
+
+    class Mahasiswa {
+        - nama: String
+        - nim: String
+        - usia: int
+        - jurusan: Jurusan
+        - kelasList: List<Kelas>
+        --
+        + Mahasiswa(nama: String, nim: String, usia: int, jurusan: Jurusan)
+        + getNama(): String
+        + setNama(nama: String): void
+        + getKelasList(): List<Kelas>
+        + addKelas(kelas: Kelas): void
+        + displayInfo(): void
+    }
+
+    class Kelas {
+        - namaKelas: String
+        - kodeKelas: String
+        - mahasiswaList: List<Mahasiswa>
+        --
+        + Kelas(namaKelas: String, kodeKelas: String)
+        + getNamaKelas(): String
+        + setNamaKelas(namaKelas: String): void
+        + getKodeKelas(): String
+        + setKodeKelas(kodeKelas: String): void
+        + getMahasiswaList(): List<Mahasiswa>
+        + addMahasiswa(mahasiswa: Mahasiswa): void
+        + displayInfo(): void
+    }
+
+    Main -> Mahasiswa: creates
+    Main -> Jurusan: creates
+    Main -> Kelas: creates
+    Mahasiswa --> Jurusan: has-a
+    Mahasiswa "1" -- "0..*" Kelas: enrolled in
+    Kelas "0..*" -- "0..*" Mahasiswa: students
+}
+
+@enduml

@@ -1,0 +1,60 @@
+@startuml = Desain_UML_Dosen 
+
+skinparam ClassAttributeIconSize 0
+
+package com.pbo {
+
+    class Main {
+        + main(args: String[]): void
+    }
+
+    class Dosen {
+        - nama: String
+        - nip: String
+        - mahasiswaWaliList: List<Mahasiswa>
+        --
+        + Dosen(nama: String, nip: String)
+        + getNama(): String
+        + getNip(): String
+        + tambahMahasiswa(mahasiswa: Mahasiswa): void
+        + displayInfo(): void
+    }
+
+    class Mahasiswa {
+        - nama: String
+        - nim: String
+        - dosenWali: Dosen
+        - mataKuliahList: List<MataKuliah>
+        --
+        + Mahasiswa(nama: String, nim: String)
+        + getNama(): String
+        + getNim(): String
+        + getDosenWali(): Dosen
+        + setDosenWali(dosenWali: Dosen): void
+        + addMataKuliah(mataKuliah: MataKuliah): void
+        + displayInfo(): void
+    }
+
+    class MataKuliah {
+        - nama: String
+        - kode: String
+        - mahasiswaList: List<Mahasiswa>
+        --
+        + MataKuliah(nama: String, kode: String)
+        + getNama(): String
+        + getKode(): String
+        + addMahasiswa(mahasiswa: Mahasiswa): void
+        + displayInfo(): void
+    }
+
+    Main -> Dosen: creates
+    Main -> Mahasiswa: creates
+    Main -> MataKuliah: creates
+
+    Dosen "1" -- "0..*" Mahasiswa: guides
+    Mahasiswa "0..*" -- "0..*" MataKuliah: enrolled in
+    Mahasiswa "1" --> "0..1" Dosen: has
+    MataKuliah "0..*" -- "0..*" Mahasiswa: students
+}
+
+@enduml

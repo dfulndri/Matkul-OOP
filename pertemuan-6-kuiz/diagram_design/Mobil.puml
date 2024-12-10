@@ -1,0 +1,24 @@
+//PROGRAM DIAGRAM UML PRAKTIKUM SESI 6
+
+@startuml = startuml
+skinparam ClassAttributeIconSize 0
+
+class Mobil {
+    - merk: String
+    - jenis: String
+    - bahanBakar: String
+    - silinder: double
+
+    + Mobil(mrk: Sring, jns : String)
+    + setMerk(mrk: String): void
+    + setJenis(jns: String): void
+    + setBahanBakar(bb: String): void
+    + setCC(cc: double): void
+    + getMerk(): String
+    + getJenis(): String
+    + getBahanBakar(): String
+    + getSilinder(): double
+}
+
+
+@enduml

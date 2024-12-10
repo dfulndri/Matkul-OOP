@@ -1,0 +1,21 @@
+@startuml = Desain_UML_Mahasiswa
+skinparam ClassAttributeIconSize 0
+
+package com.pbo {
+
+    class Mahasiswa {
+        - nama: String
+        - nim: String
+        - usia: int
+        --
+        + getNama(): String
+        + setNama(nama: String): void
+        + getNim(): String
+        + setNim(nim: String): void
+        + getUsia(): int
+        + setUsia(usia: int): void
+        + displayInfo(): void
+    }
+}
+
+@enduml
