@@ -15,6 +15,6 @@ public class Manager extends Pegawai{
     //untuk fungsi dari void tugas() merupakan fungsi spesifik yang hanya dimiliki oleh class manager
     public void tugas(){
         System.out.println("Tugas: Melakukan manajemen untuk frenchise");
-        System.out.println("---------------------------------------------------");
+        System.out.println("------------------------------------------");
     } 
 }

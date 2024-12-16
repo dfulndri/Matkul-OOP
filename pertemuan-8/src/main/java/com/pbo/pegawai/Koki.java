@@ -10,6 +10,6 @@ public class Koki extends Pegawai{
 
     public void tugas(){
         System.out.println("Tugas: Memasak makanan dan membuat minuman");
-        System.out.println("---------------------------------------------");
+        System.out.println("-------------------------------------------");
     }
 }

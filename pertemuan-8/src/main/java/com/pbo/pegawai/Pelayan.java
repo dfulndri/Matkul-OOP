@@ -10,6 +10,6 @@ public class Pelayan extends Pegawai{
 
     public void tugas(){
         System.out.println("Tugas: Melayani dan menyajikan pesan pembeli");
-        System.out.println("------------------------------------------------");
+        System.out.println("---------------------------------------------");
     }
 }
