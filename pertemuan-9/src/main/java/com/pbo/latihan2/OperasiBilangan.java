@@ -1,32 +1,30 @@
+// Package declaration
 package com.pbo.latihan2;
 
-// Class OperasiBilangan
-abstract class OperasiBilangan {
+// Abstract class OperasiBilangan sebagai kerangka dasar untuk operasi matematika
+public abstract class OperasiBilangan {
+    // Variabel protected yang akan digunakan oleh class turunan
     protected double a, b, c;
 
-    protected void set_A(double a) {
-        this.a = a;
-    }
+    // Method setter untuk variabel a
+    protected abstract void set_A(double a);
 
-    protected void set_B(double b) {
-        this.b = b;
-    }
+    // Method setter untuk variabel b
+    protected abstract void set_B(double b);
 
-    protected double get_A() {
-        return a;
-    }
+    // Method getter untuk variabel a
+    protected abstract double get_A();
 
-    protected double get_B() {
-        return b;
-    }
+    // Method getter untuk variabel b
+    protected abstract double get_B();
 
-    protected double get_C() {
-        return c;
-    }
+    // Method getter untuk variabel c
+    protected abstract double get_C();
 
+    // Abstract method untuk menghitung nilai c (hasil operasi)
+    // Harus diimplementasikan di class turunan
     protected abstract void set_C();
 
-    protected void tampil() {
-        System.out.println("Hasil operasi: " + c);
-    }
+    // Method untuk menampilkan hasil operasi
+    protected abstract void tampil();
 }
